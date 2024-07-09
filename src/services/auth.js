@@ -2,8 +2,8 @@ const jwt = require('jsonwebtoken');
 const passport = require('passport');
 
 class AuthService {
-  static google(){
-    return passport.authenticate('google', { scope: ['profile', 'email'] });
+  static googleAuth(req, res, next) {
+    passport.authenticate('google', { scope: ['profile', 'email'] })(req, res, next);
   }
 
   static googleCallback(req, res, next) {
