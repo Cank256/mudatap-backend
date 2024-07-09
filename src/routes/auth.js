@@ -1,11 +1,11 @@
-const express = require('express');
-const AuthService = require('../services/auth');
-const router = express.Router();
+const express = require('express')
+const AuthService = require('../services/auth')
+const router = express.Router()
 
-router.get('/google', AuthService.googleAuth);
+router.get('/google', AuthService.googleAuth)
 
-router.get('/google/callback', AuthService.googleCallback);
+router.get('/google/callback', AuthService.googleCallback)
 
-router.get('/logout', AuthService.logout);
+router.get('/logout', AuthService.logout)
 
-module.exports = router;
+module.exports = router
