@@ -8,4 +8,13 @@ router.get('/', function (req, res, next) {
   })
 })
 
+/* GET home page. */
+router.get('/dashboard', function (req, res, next) {
+  res.json({
+    message: 'Welcome to the MudaTap Dashboard.',
+  })
+})
+
+router.use('/auth', require('./auth'))
+
 module.exports = router
