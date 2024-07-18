@@ -36,9 +36,17 @@ class AuthService {
   }
 
   static logout(req, res) {
-    req.logout()
-    res.clearCookie('token')
-    res.redirect('/')
+    req.logout(function (err) {
+      if (err) {
+        // Handle error, e.g., logging or sending an error response
+        console.error('Error logging out:', err)
+        return res.status(500).json({ error: 'Failed to logout' })
+      }
+
+      // If no error, clear the cookie and redirect
+      res.clearCookie('token')
+      res.redirect('/')
+    })
   }
 }
 

@@ -1,5 +1,6 @@
 const express = require('express')
 const router = express.Router()
+const authenticated = require('../middleware/auth')
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
@@ -9,7 +10,7 @@ router.get('/', function (req, res, next) {
 })
 
 /* GET home page. */
-router.get('/dashboard', function (req, res, next) {
+router.get('/dashboard', authenticated, function (req, res, next) {
   res.json({
     message: 'Welcome to the MudaTap Dashboard.',
   })
