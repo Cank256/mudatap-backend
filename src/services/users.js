@@ -20,14 +20,10 @@ const getAll = async (req, res) => {
  * @param {Object} res - Express response object
  */
 const addUser = async (req, res) => {
-  const { googleId, name, email, profilePic, workspaces } = req.body;
+  const { email } = req.body;
 
   const newUser = new User({
-    googleId,
-    name,
     email,
-    profilePic,
-    workspaces,
   });
 
   try {

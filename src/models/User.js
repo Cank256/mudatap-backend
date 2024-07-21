@@ -3,17 +3,21 @@ const mongoose = require('mongoose')
 const UserSchema = new mongoose.Schema({
   googleId: {
     type: String,
-    required: true,
+    required: false,
     unique: true,
   },
-  name: String,
+  name: {
+    type: String,
+  },
   email: {
     type: String,
     required: true,
     unique: true,
   },
-  profilePic: String,
-  workspaces: [
+  profilePic: {
+    type: String,
+  },
+  meta: [
     {
       workspaceId: {
         type: mongoose.Schema.Types.ObjectId,
