@@ -21,6 +21,12 @@ const UserSchema = new mongoose.Schema({
       },
       role: String,
       department: String,
+      projects: {
+        projectId: {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: 'Project',
+        },
+      }
     },
   ],
 })
